@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-user',
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './user.html',
   styleUrl: './user.css'
 })
@@ -16,6 +17,7 @@ export class User {
   userEmail: string = 'john.doe@example.com';
   userBio: string = 'This is a sample user bio.';
   tableClasses: string = 'table table-bordered table-striped table-hover';
+  aboutUser: string = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.';
   tableStyles: { [key: string]: string } = {
     'width': '80%',
     'margin-top': '50px',
@@ -28,7 +30,7 @@ export class User {
     'margin-left': '10px'
   };
   // Two way data binding: ngModel
-  
+
 
 
   constructor() {
@@ -47,4 +49,6 @@ export class User {
     this.userEmail = 'jane.doe@example.com';
     this.userBio = 'This is an updated user bio.';
   }
+
+
 }
