@@ -1,1 +1,25 @@
-<p>user works!</p>
+<h1>User Page</h1>
+
+<table [className]="tableClasses" [style]="tableStyles">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Role</th>
+      <th>Email</th>
+      <th>Bio</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{ userName }}</td>
+      <td>{{ userRole }}</td>
+      <td>{{ userEmail }}</td>
+      <td>{{ userBio }}</td>
+    </tr>
+  </tbody>
+
+  <button [style]="buttonStyles" [className]="buttonClasses" (click)="editUser()">Edit</button>
+</table>
+
+
+<form action=""></form>
