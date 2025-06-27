@@ -1,0 +1,35 @@
+<h1>DIRECTIVE PAGE</h1>
+
+    <div class="container">
+        <div class="row">
+        <div class="col-3" [ngClass]="div1ClassName()">
+            DIV 1 - {{div1ClassName()}}
+        </div>
+        <div class="col-3" [ngStyle]="{'background-color': isDivGreen() ? 'green':'red'}">
+            DIV 2
+        </div>
+        <div class="col-3" *ngIf="isDiv3Visible()">
+            DIV 3 *ngIF
+        </div>
+        <div class="col-3">
+            <ul>
+                <li *ngFor = 'let city of cityArray()'>{{city}}</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-3">
+            <button class="btn btn-success" (click) = "setBackgroundClass('bg-success')">Green</button> 
+            <button class="btn btn-danger" (click) = "setBackgroundClass('bg-danger')">Red</button>
+        </div>
+        <div class="col-3">
+            <button class="btn btn-secondary" (click)="toggleDivColor()">Toggle BG Color</button>
+        </div>
+        <div class="col-3">
+            <button class="btn" (click) = "showDiv3()">SHOW</button> 
+            <button class="btn" (click) = "hideDiv3()">HIDE</button>
+        </div>
+    </div>
+
+</div>
