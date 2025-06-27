@@ -1,0 +1,114 @@
+<h1>CONTROL FLOW PAGE</h1>
+
+
+<table [className]="tableClass()">
+    <tr>
+        <td>
+            @if (isParaVisible() === true) {
+                <p>This is paragraf</p>
+            }
+            @else {
+                <p></p>
+            }
+        </td>
+        <td>
+            <button (click)="showParagraph()">Show paragraf</button>
+        </td>
+        <td>
+            <button (click)="hideParagraph()">Hide paragraf</button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @switch (startMonthName()) {
+                @case ("Jan") {
+                    <p>January</p>
+                }
+                @case ("Feb") {
+                    <p>February</p>
+                }
+                @case ("Mar") { 
+                    <p>March</p>
+                }
+                @case ("Apr") {
+                    <p>April</p>
+                }
+                @case ("May") { 
+                    <p>May</p>
+                }
+                @case ("Jun") {
+                    <p>June</p>
+                }
+                @case ("Jul") { 
+                    <p>July</p>
+                }
+                @case ("Aug") {
+                    <p>August</p>
+                }
+                @case ("Sep") { 
+                    <p>September</p>
+                }
+                @case ("Oct") {
+                    <p>October</p>
+                }
+                @case ("Nov") { 
+                    <p>November</p>
+                }
+                @case ("Dec") { 
+                    <p>December</p>
+                }
+            }
+        </td>
+        <td>
+            <input type="text" [(ngModel)] = "startMonthName">
+        </td>
+    </tr>
+    <tr>
+        
+        <td>
+            <ul>
+                @for (item of cityList(); track $index) {
+                    <li>{{ item }}</li>
+                }
+            </ul>
+        </td>
+        <td>
+            <select name="" id="">
+                @for (item of cityList(); track $index) {
+                    <option value="{{ item }}">{{ item }}</option>
+                }
+            </select>
+        </td>
+    </tr>
+</table>
+<br><br><br><br><br><br>
+
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>City</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (student of studentList(); track $index) {
+            <tr>
+                <td>{{ $index + 1}}</td>
+                <td>{{ student.name }}</td>
+                <td>{{ student.age }}</td>
+                <td>{{ student.city }}</td>
+                <td>
+                    @if (student.isActive) {
+                        Avtive
+                    }
+                    @else {
+                        Inactive
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

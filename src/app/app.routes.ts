@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { User } from './components/user/user';
 import { Admin } from './components/admin/admin';
+import { ControlFlow } from './components/control-flow/control-flow';
 
 export const routes: Routes = [
     {
@@ -10,5 +11,9 @@ export const routes: Routes = [
     {
         path: 'admin',
         component: Admin
+    },
+    {
+        path: 'control-flow',
+        component: ControlFlow
     },
 ];
