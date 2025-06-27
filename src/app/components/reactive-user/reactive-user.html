@@ -37,6 +37,14 @@
                     <div class="col-6">
                         <label for="">Email</label>
                         <input type="text" formControlName="emailId" class="form-control">
+                         @if (userForm.controls['emailId'].touched) {
+                                @if (userForm.controls['emailId'].errors?.['required']) {
+                                <span>This is required</span>
+                                }
+                                @if (userForm.controls['emailId'].errors?.['email']) {
+                                    <span>Invalid email format</span>
+                                }
+                            }
                     </div>
                     <div class="col-6">
                         <label for="">Password</label>
@@ -53,7 +61,8 @@
                 </div>
             </form>
             <div>
-                <button class="btn btn-primary" (click) = 'onSave()'>Save</button>
+
+                <button class="btn btn-primary" [disabled] = "userForm.invalid" (click) = 'onSave()'>Save</button>
             </div>
         </div>
    
