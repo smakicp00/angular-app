@@ -1,0 +1,82 @@
+<h1>USERS PAGE</h1>
+
+<div class="row">
+    <div class="col-6">
+        <div class="card">
+            <div class="card-header bg-light"><h4>USER INFO  {{userObj().emailId}}</h4></div>
+        </div>
+        <div class="card-body">
+            <table class="table table-dark table-bordered">
+                <thead>
+                    <tr>
+                        <th>UserId</th>
+                        <th>Email</th>
+                        <th>password</th>
+                        <th>fullName</th>
+                        <th>mobileNo</th>
+                        <th>More Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (user of userList(); track $index) {
+                        <tr>
+                            <td>{{user.userId}}</td>
+                            <td>{{user.emailId}}</td>
+                            <td>{{user.password}}</td>
+                            <td>{{user.fullName}}</td>
+                            <td>{{user.mobileNo}}</td>
+                            <td>
+                                <button class="btn btn-small btn-primary" (click) = "onEdit(user)" >Edit</button>
+                                <button class="btn btn-small btn-danger" (click) = "onDelete(user.userId)">Delete</button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="col-6">
+        <div class="card">
+            <div class="card-header"><h4>NEW USER</h4></div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-6">
+                        <label for="">Email</label>
+                        <input type="text" class="form-control" [(ngModel)] = "userObj().emailId">
+                    </div>
+                    <div class="col-6">
+                        <label for="">Password</label>
+                        <input type="text" class="form-control" [(ngModel)] = "userObj().password">
+                    </div>
+                    <div class="col-6">
+                        <label for="">Full Name</label>
+                        <input type="text" class="form-control" [(ngModel)] = "userObj().fullName">
+                    </div>
+                    <div class="col-6">
+                        <label for="">Mobile Number</label>
+                        <input type="text" class="form-control" [(ngModel)] = "userObj().mobileNo">
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-6 text-center">
+                        <button class="btn btn-primary" (click) = "onResetUser()">Reset</button>
+                    </div>
+                    <div class="col-6 text-center">
+                        {{userObj().userId}}
+                        @if (userObj().userId === 0) {
+                            <button class="btn btn-secondary" (click) = "onSaveUser()">Save</button>
+                        }
+                        @else {
+                            <button class="btn btn-secondary" (click) = "onUpdateUser()">Update</button>
+                        }
+
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

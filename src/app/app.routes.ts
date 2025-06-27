@@ -5,6 +5,7 @@ import { ControlFlow } from './components/control-flow/control-flow';
 import { Directive } from './components/directive/directive';
 import { LifeCycle } from './components/life-cycle/life-cycle';
 import { GetApi } from './components/get-api/get-api';
+import { Users } from './components/users/users';
 
 export const routes: Routes = [
     {
@@ -30,5 +31,9 @@ export const routes: Routes = [
     {
         path: 'get-api',
         component: GetApi
+    },
+    {
+        path: 'users',
+        component: Users
     },
 ];
