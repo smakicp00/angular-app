@@ -1,0 +1,23 @@
+<h1>GET API PAGE</h1>
+
+
+<table class="table table-dark" >
+    <thead>
+        <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td>Username</td>
+            <td>Email</td>
+        </tr>
+    </thead>
+    <tbody>
+        @for (user of userList(); track $index) {
+            <tr>
+                <td>{{user.id}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.username}}</td>
+                <td>{{user.email}}</td>
+            </tr>
+        }
+    </tbody>
+</table>
