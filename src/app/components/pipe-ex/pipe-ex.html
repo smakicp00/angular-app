@@ -1,0 +1,45 @@
+<h1>PIPE PAGE</h1>
+
+<div class="row">
+    <div class="col-6">
+        <p>{{courseName()}}</p>
+        <p>{{courseName()}} :uppercase: {{courseName() | uppercase }}</p>
+        <p>{{courseDuration()}} :lowercase: {{courseDuration() | lowercase }}</p>
+        <p>{{courseDuration()}} :capital case: {{courseDuration() | titlecase }}</p>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-6">
+        <p>{{currentDate()}}</p>
+        <p>{{currentDate() | date }}</p>
+        <p>{{currentDate() | date:'dd-MM-yyyy' }}</p>
+        <p>{{currentDate() | date:'dd/MM/yy' }}</p>
+        <p>{{currentDate() | date:'dd/MMM/yy' }}</p>
+        <p>{{currentDate() | date:'dd/MMMM/yyyy' }}</p>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-6">
+        <p>{{rollNoList()}}</p>
+        <p>{{rollNoList() | slice:2 }}</p>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-6">
+       <p>{{studentObj()}}</p>
+       <p>{{studentObj() | json }}</p>
+
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-6">
+       <p>name:{{studentObj().name | na }}</p>
+       <p>email:{{studentObj().email | na}}</p>
+      
+
+    </div>
+</div>

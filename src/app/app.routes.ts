@@ -7,6 +7,7 @@ import { LifeCycle } from './components/life-cycle/life-cycle';
 import { GetApi } from './components/get-api/get-api';
 import { Users } from './components/users/users';
 import { ReactiveUser } from './components/reactive-user/reactive-user';
+import { PipeEx } from './components/pipe-ex/pipe-ex';
 
 export const routes: Routes = [
     {
@@ -40,5 +41,9 @@ export const routes: Routes = [
     {
         path: 'reactive-user',
         component: ReactiveUser
+    },
+    {
+        path: 'pipe',
+        component: PipeEx
     },
 ];
