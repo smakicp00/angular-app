@@ -10,30 +10,30 @@ import { Master } from './services/master';
 })
 export class App {
   protected title = 'angular-app';
-  loggedUser: string = '';
+  // loggedUser: string = '';
 
 
-  constructor(private masterService: Master) {
-    this.readLoggedData();
-    this.masterService.onLogin.subscribe(res => {
-      this.readLoggedData();
-    });
+  // constructor(private masterService: Master) {
+  //   this.readLoggedData();
+  //   this.masterService.onLogin.subscribe(res => {
+  //     this.readLoggedData();
+  //   });
 
 
 
-  }
+  // }
 
-  readLoggedData() {
-    const loggedData = localStorage.getItem("angular20User");
-    if (loggedData !== null) {
-      this.loggedUser = loggedData;
-    }
-  }
+  // readLoggedData() {
+  //   const loggedData = localStorage.getItem("angular20User");
+  //   if (loggedData !== null) {
+  //     this.loggedUser = loggedData;
+  //   }
+  // }
 
-  onLogOff(){
-    localStorage.removeItem("angular20User");
-    this.readLoggedData();
-    this.loggedUser = '';
-  }
+  // onLogOff(){
+  //   localStorage.removeItem("angular20User");
+  //   this.readLoggedData();
+  //   this.loggedUser = '';
+  // }
 
 }
