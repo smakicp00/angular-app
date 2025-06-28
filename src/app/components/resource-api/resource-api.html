@@ -1,0 +1,29 @@
+<h1>RESOURCE API PAGE</h1>
+
+<div class="row">
+    <div class="col-6">
+        {{ userData.hasValue()}}
+        {{ userData.value()}}
+        {{ userData.isLoading()}}
+    </div>
+    <div class="col-6">
+        @if (userData.hasValue()) {
+            <ul>
+                @for (item of userData.value(); track $index) {
+                    <li>{{item.username}}</li>
+                }
+            </ul>
+        }
+    </div>
+</div>
+<div class="row">
+    <div class="col-6">
+        @if (userList.hasValue()) {
+            <ul>
+                @for (item of userList.value(); track $index) {
+                    <li>{{item.username}}</li>
+                }
+            </ul>
+        }
+    </div>
+</div>
