@@ -9,6 +9,7 @@ import { Users } from './components/users/users';
 import { ReactiveUser } from './components/reactive-user/reactive-user';
 import { PipeEx } from './components/pipe-ex/pipe-ex';
 import { ResourceApi } from './components/resource-api/resource-api';
+import { Login } from './components/login/login';
 
 export const routes: Routes = [
     {
@@ -47,8 +48,12 @@ export const routes: Routes = [
         path: 'pipe',
         component: PipeEx
     },
-     {
+    {
         path: 'resourceApi',
         component: ResourceApi
+    },
+    {
+        path: 'login',
+        component: Login
     },
 ];

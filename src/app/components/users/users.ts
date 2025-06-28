@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Master } from '../../pipes/services/master';
+import { Master } from '../../services/master';
 
 @Component({
   selector: 'app-users',

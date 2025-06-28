@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, signal } from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -7,6 +8,9 @@ import { Injectable, signal } from '@angular/core';
 export class Master {
 
   appName: string = "Angular";
+
+  onLogin: Subject<boolean> = new Subject<boolean>();
+
   constructor(private http: HttpClient) {}
 
   getSum(num1: number, num2: number): number {
